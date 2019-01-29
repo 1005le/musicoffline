@@ -10,18 +10,28 @@ public class Song {
     private String nameArtist;
     private String nameAlbum;
     private String songPath;
+    int icon;
 
-    public Song(String id, String name, String nameArtist, String nameAlbum, String songPath) {
+    public Song(String id, String name, String nameArtist, String nameAlbum, String songPath, int icon) {
         this.id = id;
         this.name = name;
         this.nameArtist = nameArtist;
         this.nameAlbum = nameAlbum;
         this.songPath = songPath;
+        this.icon = icon;
     }
 
     public Song(String name, String nameArtist) {
         this.name = name;
         this.nameArtist = nameArtist;
+    }
+
+    public int getIcon() {
+        return icon;
+    }
+
+    public void setIcon(int icon) {
+        this.icon = icon;
     }
 
     public String getId() {

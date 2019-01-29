@@ -11,10 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SearchView.SearchVActivity">
 
-        </activity>
-        <activity android:name=".activity.ListSongActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,6 +20,9 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".activity.NewActivity" />
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".activity.ListSongActivity" />
     </application>
 
 </manifest>
