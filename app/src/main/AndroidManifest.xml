@@ -1,28 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.admin.musicoffline">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"
+        tools:ignore="ProtectedPermissions" />
+    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".SearchView.SearchVActivity">
-
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".lockseen.LockSeenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".notification.NotificationActivity"></activity>
+        <activity android:name=".SearchRecycleView.RecyclerActivity">
 
         </activity>
+        <activity android:name=".SearchView.SearchVActivity" />
         <activity android:name=".activity.NewActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".activity.ListSongActivity" />
+
+        <receiver android:name=".notification.NotificationBroadcast">
+            <intent-filter>
+                <action android:name="com.example.admin.musicoffline.previous" />
+                <action android:name="com.example.admin.musicoffline.play" />
+                <action android:name="com.example.admin.musicoffline.delete" />
+                <action android:name="com.example.admin.musicoffline.pause" />
+                <action android:name="com.example.admin.musicoffline.next" />
+            </intent-filter>
+        </receiver>
+        
+        <service android:name=".lockseen.MediaPlayerService" ></service>
     </application>
 
 </manifest>

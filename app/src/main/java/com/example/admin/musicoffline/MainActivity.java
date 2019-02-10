@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
          * hien thi danh sách
          */
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Items List");
+      //  actionBar.setTitle("Items List");
 
         title = new String[]{"Battery", "Cpu", "Display", "Memory", "Sensor"};
         description = new String[]{"Battery detail...", "Cpu detail...", "Display detail...", "Memory detail...", "Sensor detail..."};
